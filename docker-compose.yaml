@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  ### BLokaj Spring Security
+  blokaj-spring-boot-dgs-graphql:
+    container_name: blokaj-spring-boot-dgs-graphql
+    build:
+#      context:  #the path must be where the app has been located in your local machine.
+      dockerfile: Dockerfile #How is the dockerfile name
+    ports:
+      - '8081:8081' #in which port the app will be
+    networks:
+      - blokaj
+
+networks:
+  blokaj:

@@ -1,0 +1,12 @@
+""" Base error message interface."""
+interface ErrorInterface {
+    """Dedicated error message"""
+    message: String
+    """Dedicated error code"""
+    code: String
+}
+
+type GeneralError implements ErrorInterface {
+    message: String
+    code: String
+}

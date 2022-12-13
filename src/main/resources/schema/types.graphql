@@ -1,0 +1,12 @@
+type PersonInfoType {
+    id: ID
+    firstName: String!
+    lastName: String!
+    age: Int!
+    email: String!
+    phoneNumber: String!
+}
+
+type InformationOfPersonsResponse {
+    persons: [PersonInfoType]
+}

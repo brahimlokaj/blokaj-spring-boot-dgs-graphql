@@ -1,0 +1,41 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.6'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'com.netflix.dgs.codegen' version '5.1.17'
+}
+
+group = 'org.blokaj'
+version = '1.0.0-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+generateJava {
+	packageName = "org.blokaj.graphql.generated"
+	generateClient = true
+	language = "java"
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+
+	implementation 'com.netflix.graphql.dgs:graphql-dgs-spring-boot-starter:4.9.25'
+	implementation 'com.netflix.graphql.dgs:graphql-dgs-extended-scalars:4.9.25'
+
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	compileOnly "org.mapstruct:mapstruct:1.5.2.Final"
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.2.Final'
+	annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

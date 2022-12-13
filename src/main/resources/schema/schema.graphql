@@ -1,0 +1,7 @@
+type Mutation {
+    AddPerson(input: PersonInfoInput): PersonUnion
+}
+
+type Query {
+    FindPersons(where: WherePerson): PersonsUnion
+}

@@ -1,0 +1,16 @@
+input PersonInfoInput {
+    firstName: String!
+    lastName: String!
+    age: Int!
+    email: String!
+    phoneNumber: String!
+}
+
+input WherePerson {
+    id: ID
+    firstName: String
+    lastName: String
+    age: Int
+    email: String
+    phoneNumber: String
+}
